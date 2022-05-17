@@ -1,0 +1,38 @@
+<div ngClass="showAllData">
+  <h2>Car Details : </h2>
+  <div>
+    <p>Model</p>
+    <p>{{car.model}}</p>
+  </div>
+  <div>
+    <p>Number</p>
+    <p>{{car.number}}</p>
+  </div>
+  <div>
+    <p>Color</p>
+    <p>{{car.color}}</p>
+  </div>
+  <div *ngIf="car.specialLetters">
+    <p>Special Letters</p>
+    <p>{{car.specialLetters}}</p>
+  </div>
+  <div *ngIf="!car.specialLetters">
+    <p>No special letters</p>
+  </div>
+  <div>
+    <p>Year</p>
+    <p>{{car.year}}</p>
+  </div>
+  <div>
+    <p>Rental Cost</p>
+    <p>{{car.rentalCost|currency:'NIS'}}</p>
+  </div>
+  <div>
+    <p>General Cost</p>
+    <p>{{car.generalCost|currency:'NIS'}}</p>
+  </div>
+
+  <button (click)="close()">close</button>
+</div>
+
+

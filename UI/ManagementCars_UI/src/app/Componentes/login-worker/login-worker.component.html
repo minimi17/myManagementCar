@@ -1,0 +1,103 @@
+<!-- <h1>Enter Details Worker : </h1> -->
+
+<!-- <form #LogInWorkerForm = "ngForm" (ngSubmit)="loginworker();LogInWorkerForm.reset()" >
+  <label>Password : </label>
+<input  required type="password" name="password" #passwordValid="ngModel" [(ngModel)]="workerlogin.password" placeholder="Enter password">
+<p class="Error" *ngIf="!passwordValid.valid &&passwordValid.touched">You need enter password</p>
+<br>
+<label >Return Password :</label>
+<input required type="password" #passwordreturnValid ="ngModel" [(ngModel)]="workerlogin.rePassword" name="repassword" placeholder="Enter password again" >
+<p class="Error" *ngIf="passwordreturnValid.value != passwordValid.value">You dont have the same password</p>
+<p>Remember Me :</p>
+<label>Yes</label>
+<input type="radio"
+name="remember"
+[value]="true"
+[(ngModel)]="workerlogin.remember">
+<label>No</label>
+<input type="radio"
+name="remember"
+[value]="false"
+[(ngModel)]="workerlogin.remember">
+<p>rrrr</p>
+
+<span *ngFor="let color of colors">
+  <input type="checkbox" name="color"
+  (change)="changeSelect($event)"
+  [value]="color.value"
+  [(ngModel)]="color.checked" >
+  {{ color.value }}
+  <br>
+</span>
+
+<p>Dateee</p>
+<input type="date"  name="born" #bornValid="ngModel" [(ngModel)]="workerlogin.born" placeholder="Enter born date">
+<button type="submit" [disabled]="!LogInWorkerForm.valid">LogIn</button>
+</form>
+
+
+<div ngClass="content">
+  <p>Login User : </p>
+  <form>
+    <label>id : </label>
+    <input type="password" placeholder="Enter Your id">
+    <br><br>
+    <button type="submit">Log In</button>
+  </form>
+</div> -->
+
+<!-- <div ngClass="mainLogin">
+<p>Remember Me : </p>
+<div>
+  <div>
+    <label>Yes</label>
+    <input type="radio" name="remember" [value]="true" [(ngModel)]="user.remember">
+  </div>
+  <div>
+    <label>No</label>
+    <input type="radio" name="remember" [value]="false" [(ngModel)]="user.remember">
+  </div>
+</div> -->
+
+<!-- </div> -->
+
+
+<div ngClass="content">
+  <p>Login Worker : </p>
+  <form #LogInWorkerForm = "ngForm" (ngSubmit)="loginworker()" >
+
+
+    <label>Password : </label>
+    <input  required type="password" name="password" #passwordValid="ngModel" [(ngModel)]="workerlogin.password" placeholder="Enter password">
+    <h1 class="Error" *ngIf="!passwordValid.valid &&passwordValid.touched">You need enter password</h1>
+    <br><br>
+    <label >Return Password : </label>
+    <input required type="password" #passwordreturnValid ="ngModel" [(ngModel)]="workerlogin.rePassword" name="repassword" placeholder="Enter password again" >
+    <h1 class="Error" *ngIf="passwordreturnValid.value != passwordValid.value">You dont have the same password</h1>
+    <br><br>
+    <label>id : </label>
+    <input required type="password" placeholder="Enter Your id"
+           name="id" #idValid="ngModel" [(ngModel)]="workerlogin.id">
+           <h1 class="Error" *ngIf="!idValid.valid &&idValid.touched">You need enter id</h1>
+           <br>
+           <button ngClass="submit" type="submit" [disabled]="!LogInWorkerForm.valid"  color="primary"   mat-raised-button>Log In</button>
+
+  </form>
+</div>
+
+<div ngClass="mainLogin">
+<p>Remember Me : </p>
+<div>
+  <div>
+    <label>Yes</label>
+    <input type="radio" name="remember" [value]="true" [(ngModel)]="workerlogin.remember">
+  </div>
+  <div>
+    <label>No</label>
+    <input type="radio" name="remember" [value]="false" [(ngModel)]="workerlogin.remember">
+  </div>
+</div>
+
+</div>
+
+

@@ -1,0 +1,28 @@
+ <div ngClass="content">
+    <p>Login User : </p>
+    <form #LogInUserForm = "ngForm" (submit)="logIn()">
+      <label>id : </label>
+      <input required type="password" placeholder="Enter Your id"
+             name="id" #idValid="ngModel" [(ngModel)]="user.id" maxlength="9" minlength="9">
+             <h1 class="Error" *ngIf="!idValid.valid &&idValid.touched">You need enter id <br> ( 9 digits)</h1>
+             <br>
+             <br>
+             <button ngClass="submit" type="submit" [disabled]="!LogInUserForm.valid" color="warn"  mat-raised-button>Log In</button>
+    </form>
+  </div>
+
+<div ngClass="mainLogin">
+  <p>Remember Me : </p>
+  <div>
+    <div>
+      <label>Yes</label>
+      <input type="radio" name="remember" [value]="true" [(ngModel)]="user.remember">
+    </div>
+    <div>
+      <label>No</label>
+      <input type="radio" name="remember" [value]="false" [(ngModel)]="user.remember">
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,38 @@
+<div ngClass="All" *ngIf="carsAndDigitalTools">
+  <h1>The Cars With Digital Tools : </h1>
+  <table>
+    <thead>
+      <th>
+        Number Car
+      </th>
+      <th>
+        Id -  DigitTools
+      </th>
+      <th>
+        Action
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carAndDigitalTools of carsAndDigitalTools; let i = index" (click)="show(carAndDigitalTools.numberCar)">
+        <td>{{carAndDigitalTools.numberCar}}</td>
+        <td>{{carAndDigitalTools.idDigitalTools}}</td>
+        <button (click)="delete(i)">delete</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <span>* Click on a row in the table to see all the details <br>for the car with the number in the row *</span>
+  <br>
+  <img *ngIf="displayImg" ngClass="imgAlert" src="../../../assets/Images/Web/add.gif" alt="addData">
+  <br><br>
+  <button (mouseenter)="changeDisplay(true)" (mouseleave)="changeDisplay(false)" [routerLink]="['/ManagerJob/addCarWithDigitalTools']">New</button>
+ </div>
+
+<div *ngIf="choose">
+  <app-show-car-with-digital-tools [carsWithDigitalTools]="carsAndDigitalTools" (closeCar)="closeCarMain()"></app-show-car-with-digital-tools>
+</div>
+
+<div ngClass="All" *ngIf="!carsAndDigitalTools">
+  <h1>No data to display ! </h1>
+  <img src="../../../assets/Images/Web/sorry.gif" ngClass="imgWebs" alt="sorry">
+</div>

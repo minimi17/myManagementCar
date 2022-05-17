@@ -1,0 +1,38 @@
+<!-- <h1>
+  Compeny Name
+</h1>
+
+<h2>CCC</h2>
+<h3>ddddd</h3>
+<h4>fffff</h4>
+
+<div>
+  <button (click)="loginclient()">User</button>
+  <button (click)="loginworker()">Worker</button>
+</div>
+
+<form>
+  <label>Choose model</label>
+  <br>
+  <mat-form-field>
+    <mat-select [(ngModel)]="chooseCar"  name="chooseCar" [disableOptionCentering]="true">
+      <mat-option *ngFor="let car of cars" [value]="car.value" style="font-size:1.3vw" >
+        <img width="70vw" height="40vw" [src]="car.img">
+        {{car.text}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p>{{chooseCar}}</p>
+
+</form> -->
+
+<div ngClass="content">
+  <p>Log In</p>
+  <button  (mouseenter)="changeDisplay(true)" (mouseleave)="changeDisplay(false)"  [routerLink]="['Login/User']" color="primary" mat-raised-button>User</button>
+
+  <button (mouseenter)="changeDisplay(true)" (mouseleave)="changeDisplay(false)" [routerLink]="['Login/Worker']" color="accent" mat-raised-button>Worker</button>
+  <img *ngIf="displayImg" ngClass="imgAlert2" src="../../../assets/Images/Web/login.gif" alt="login">
+
+</div>
+

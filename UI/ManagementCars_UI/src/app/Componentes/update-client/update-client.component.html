@@ -1,0 +1,32 @@
+<div ngClass="content">
+  <p>Update Client : </p>
+  <form #UpdateClientForm = "ngForm" (ngSubmit)="update(UpdateClientForm);" >
+    <label>First Name : </label>
+    <input type="text" required name="firstname" #firstNameValid="ngModel" [(ngModel)]="client.firstName" placeholder="Enter first name" maxlength="20" pattern="^[a-zA-zא-ת]*$">
+    <h1 class="Error" *ngIf="!firstNameValid.valid &&firstNameValid.touched">You need enter first name <br>( Up to 20 characters )</h1>
+    <br><br>
+    <label>Last Name : </label>
+    <input type="text" required name="namelast" #lastNameValid="ngModel" [(ngModel)]="client.lastName" placeholder="Enter last name" maxlength="20" pattern="^[a-zA-zא-ת]*$">
+    <h1 class="Error" *ngIf="!lastNameValid.valid &&lastNameValid.touched">You need enter last name <br>( Up to 20 characters )</h1>
+    <br><br>
+    <label >Phone Number : </label>
+    <input type="text" required name="phone" #phoneValid="ngModel" [(ngModel)]="client.phoneNumber" minlength="10" maxlength="10" placeholder="Enter Phone Number" pattern="^05[0-6|8|9][0-9]{7}$">
+    <h1 class="Error" *ngIf="!phoneValid.valid &&phoneValid.touched">You need enter phone number <br>( 10 digits )</h1>
+    <br><br>
+    <label>Car number : </label>
+    <input type="text" name="numberCar" #numberValid="ngModel" [(ngModel)]="client.carNumber"  placeholder="Enter car number" maxlength="8" pattern="^[0-9]*$">
+    <h1 class="Error" *ngIf="!numberValid.valid && numberValid.touched">You need enter car number <br> ( Up to 8 characters )</h1>
+    <br><br>
+    <label>Date of birth :  </label>
+    <input type="date" name="born" #bornValid="ngModel" [(ngModel)]="client.bornDate" max="{{date | date:'yyyy-MM-dd'}}">
+    <br><br>
+    <label>VIP : </label>
+    <div>
+      <span>Yes</span>
+      <input type="radio" name="vip" [value]="true" [(ngModel)]="client.vip" >
+      <span>No</span>
+      <input type="radio" name="vip" [value]="false" [(ngModel)]="client.vip" >
+    </div>
+    <button ngClass="submit" type="submit" [disabled]="!UpdateClientForm.valid">Add</button>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<div ngClass="showAllData">
+  <table>
+    <thead>
+      <th>
+        Number Car
+      </th>
+      <th>
+        Id -  DigitTools
+      </th>
+      <th>
+        Action
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let carAndDigitalTools of carsWithDigitalTools;">
+        <td>{{carAndDigitalTools.numberCar}}</td>
+        <td>{{carAndDigitalTools.idDigitalTools}}</td>
+        <button>delete</button>
+        <button>update</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <button>Delete All</button>
+  <br>
+  <button (click)="close()">close</button>
+</div>

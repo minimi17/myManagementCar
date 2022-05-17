@@ -1,0 +1,33 @@
+<div ngClass="showAllData">
+  <h2>Worker Details : </h2>
+  <div>
+    <p>First Name</p>
+    <p>{{worker.firstName}}</p>
+  </div>
+  <div>
+    <p>Last Name</p>
+    <p>{{worker.lastName}}</p>
+  </div>
+  <div>
+    <p>Id</p>
+    <p>{{worker.id}}</p>
+  </div>
+  <div>
+    <p>Role</p>
+    <p>{{worker.role}}</p>
+  </div>
+  <div>
+    <p>Join Date</p>
+    <p>{{worker.joinIn|date:'dd-MM-yyyy'}}</p>
+  </div>
+  <div>
+    <p>Password</p>
+    <p>{{worker.password}}</p>
+  </div>
+  <div>
+    <p>Salary</p>
+    <p>{{worker.salary|currency}}</p>
+  </div>
+
+  <button (click)="close()">close</button>
+</div>

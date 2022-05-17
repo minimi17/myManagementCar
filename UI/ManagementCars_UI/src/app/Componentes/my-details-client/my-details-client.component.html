@@ -1,0 +1,33 @@
+<div ngClass="content">
+  <h2>My Client Details : </h2>
+  <div>
+    <p>First Name</p>
+    <h3>{{client.firstName}}</h3>
+  </div>
+  <div>
+    <p>Last Name</p>
+    <h3>{{client.lastName}}</h3>
+  </div>
+  <div>
+    <p>Id</p>
+    <h3>{{client.id}}</h3>
+  </div>
+  <div>
+    <p>Born Date</p>
+    <h3>{{client.bornDate|date:'dd-MM-yyyy'}}</h3>
+  </div>
+  <div>
+    <p>Phone Number</p>
+    <h3>{{client.phoneNumber.slice(0,3)+'-'+client.phoneNumber.slice(3)}}</h3>
+  </div>
+  <div *ngIf="client.vip==true">
+    <h3>VIP</h3>
+  </div>
+  <div *ngIf="client.carNumber">
+    <p>Car in rental</p>
+    <h3>{{client.carNumber}}</h3>
+  </div>
+  <div *ngIf="!client.carNumber">
+    <h3>No car in rental</h3>
+  </div>
+</div>

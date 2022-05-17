@@ -1,0 +1,14 @@
+<div ngClass="content">
+  <p>Add Department : </p>
+  <form #AddDepartmentForm = "ngForm" (ngSubmit)="add(AddDepartmentForm);" >
+    <label>Name : </label>
+    <input type="text" required name="name" #nameValid="ngModel" [(ngModel)]="department.name" placeholder="Enter department name" maxlength="20">
+    <h1 class="Error" *ngIf="!nameValid.valid &&nameValid.touched">You need enter department name<br>( Up to 20 characters )</h1>
+    <br><br>
+    <label>Description : </label>
+    <textarea rows = "3" cols = "20" name="description" [(ngModel)]="department.description" placeholder="Enter description about the department">
+      </textarea>
+    <br><br>
+    <button ngClass="submit" type="submit" [disabled]="!AddDepartmentForm.valid">Add</button>
+  </form>
+</div>

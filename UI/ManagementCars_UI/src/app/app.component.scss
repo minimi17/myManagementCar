@@ -1,0 +1,61 @@
+@import '../styles.scss';
+
+p{
+  color:transparent;
+  background-image: linear-gradient(red, yellow);
+  background-clip: text;
+
+}
+
+p{
+  &:hover{
+    animation: biggerText 5s infinite;
+  }
+}
+
+@keyframes biggerText{
+  from{
+    font-size: 2vw;
+  }
+  to{
+    font-size: 4vw;
+  }
+}
+
+.sound{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 10vw;
+  background-image: $mainBackGroundColor;
+  padding: .5vw;
+
+  button{
+    width: 4vw;
+    height: 3vw;
+    font-size: 1vw;
+  }
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  img{
+    width: 8vw;
+    height: 8vw;
+  }
+
+  h1{
+  color:transparent;
+  background-image: $mainBackGroundColor;
+  background-clip: text;
+  font-size: 5vw;
+  transform: translateY(3vw);
+
+  &:hover{
+    animation: biggerText 5s infinite;
+  }
+  }
+}

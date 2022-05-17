@@ -1,0 +1,38 @@
+<div ngClass="content">
+  <p>Add Car : </p>
+  <form #AddCarForm = "ngForm" (ngSubmit)="add(AddCarForm)">
+
+    <label>model : </label>
+    <mat-form-field>
+      <mat-select [(ngModel)]="car.model"  name="model" [disableOptionCentering]="true">
+        <mat-option *ngFor="let model of carModels" [value]="model.value" style="font-size:1.3vw" >
+          <img width="70vw" height="40vw" [src]="model.img">
+          {{model.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br><br>
+    <label>number : </label>
+    <input type="text" required name="numCar" #numCarValid="ngModel" [(ngModel)]="car.number" placeholder="Enter car number" maxlength="8" pattern="^[0-9]*$">
+    <h1 class="Error" *ngIf="!numCarValid.valid &&numCarValid.touched">You need enter car number <br> ( Up to 8 characters )</h1>
+    <br><br>
+    <label >color : </label>
+    <input type="color" required name="colorCar" #colorCarValid="ngModel" [(ngModel)]="car.color">
+    <br><br>
+    <label>year : </label>
+    <input type="number" required name="year" #yearCar="ngModel" [(ngModel)]="car.year" min="1990" max="2022" >
+    <h1 class="Error" *ngIf="!yearCar.valid &&yearCar.touched">You must enter a year between 1990 and 2022</h1>
+    <br><br>
+    <label>special Letters : </label>
+    <select name="letters" #letters="ngModel" [(ngModel)]="car.specialLetters">
+      <option [ngValue]="" disabled>select special Letters </option>
+      <option *ngFor="let letters of specialLetters" [ngValue]="letters">{{letters}}</option>
+    </select>
+    <br><br>
+    <label>Rental Cost : </label>
+    <input type="number" required name="rental" #rental="ngModel" [(ngModel)]="car.rentalCost" min="1000" max="10000">
+    <h1 class="Error" *ngIf="!rental.valid &&rental.touched">You must enter a Rental between 1,000 and 10,000</h1>
+    <br><br>
+           <button ngClass="submit" type="submit" [disabled]="!AddCarForm.valid">Add</button>
+  </form>
+</div>

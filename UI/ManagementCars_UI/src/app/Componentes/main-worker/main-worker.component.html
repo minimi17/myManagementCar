@@ -1,0 +1,45 @@
+<div ngClass="All" *ngIf="workerss">
+
+  <h1>The Workers : </h1>
+  <table>
+    <thead>
+      <th>
+        First Name
+      </th>
+      <th>
+        Last Name
+      </th>
+      <th>
+        Id
+      </th>
+      <th>
+        Action
+      </th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let worker of workerss;let i=index" (click)="show(i)">
+        <td>{{worker.firstName}}</td>
+        <td>{{worker.lastName}}</td>
+        <td>{{worker.id}}</td>
+        <button (click)="delete(i)">delete</button>
+        <button (click)="update(i)" >update</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <span>* Click on a row in the table to see all the details *</span>
+  <br>
+  <img *ngIf="displayImg" ngClass="imgAlert" src="../../../assets/Images/Web/add.gif" alt="addData">
+  <br><br>
+  <button (mouseenter)="changeDisplay(true)" (mouseleave)="changeDisplay(false)" [routerLink]="['/ManagerJob/addWorker']">New</button>
+</div>
+
+<div *ngIf="choose">
+  <app-show-worker [worker]="workerChoose" (closeCar)="closeWorkerMain()"></app-show-worker>
+</div>
+
+<div ngClass="All" *ngIf="!workerss">
+  <h1>No data to display ! </h1>
+  <img src="../../../assets/Images/Web/sorry.gif" ngClass="imgWebs" alt="sorry">
+</div>

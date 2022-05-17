@@ -1,0 +1,14 @@
+<div ngClass="content">
+  <p>Car Rental </p>
+  <form #AddCarToClient = "ngForm" (ngSubmit)="add(AddCarToClient);" >
+    <label>Client id : </label>
+    <input type="text" required name="id" #idValid="ngModel" [(ngModel)]="addCarToClient.idClient" minlength="9" maxlength="9" placeholder="Enter id"  pattern="^[0-9]*$">
+    <h1 class="Error" *ngIf="!idValid.valid &&idValid.touched">You need enter id <br>( 9 digits )</h1>
+    <br><br>
+    <label>Car number : </label>
+    <input type="text" required name="numberCar" #numberValid="ngModel" [(ngModel)]="addCarToClient.numberCar"  placeholder="Enter car number" maxlength="8" pattern="^[0-9]*$">
+    <h1 class="Error" *ngIf="!numberValid.valid && numberValid.touched">You need enter car number <br> ( Up to 8 characters )</h1>
+    <br><br>
+    <button ngClass="submit" type="submit" [disabled]="!AddCarToClient.valid">Add rental</button>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+<div ngClass="home">
+  <div *ngIf="kindWorker=='Manager'">
+    <p>Manager Jobs : </p>
+    <div>
+      <button [routerLink]="['/ManagerJob/addWorker']">Add Worker</button>
+      <button [routerLink]="['/ManagerJob/showWorker']">Show Workers</button>
+    </div>
+    <div>
+      <button [routerLink]="['/ManagerJob/addCar']">Add Car</button>
+      <button [routerLink]="['/ManagerJob/showCar']">Show Cars</button>
+    </div>
+    <div>
+      <button [routerLink]="['/ManagerJob/addDepartment']">Add Department</button>
+      <button [routerLink]="['/ManagerJob/showDepartment']">Show Departments</button>
+    </div>
+    <div>
+      <button [routerLink]="['/ManagerJob/addDigitalTools']">Add DigitalTools</button>
+      <button [routerLink]="['/ManagerJob/showDigitalTools']">Show DigitalTools</button>
+    </div>
+    <div>
+      <button [routerLink]="['/ManagerJob/addCarWithDigitalTools']">Add Car With DigitalTools</button>
+      <button [routerLink]="['/ManagerJob/showCarWithDigitalTools']">Show Car With DigitalTools</button>
+    </div>
+  </div>
+
+  <div>
+    <p>Worker Jobs : </p>
+    <div>
+      <button [routerLink]="['/WorkerJob/addClient']">Add Client</button>
+      <button [routerLink]="['/WorkerJob/showClients']">Show Clients</button>
+    </div>
+    <button [routerLink]="['/WorkerJob/addRental']">Add rental</button>
+    <button [routerLink]="['ShowDetails']">Show My Details</button>
+    <button (click)="by()">Log Out</button>
+  </div>
+</div>
+
+

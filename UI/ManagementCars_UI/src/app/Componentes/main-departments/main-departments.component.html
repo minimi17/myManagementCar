@@ -1,0 +1,36 @@
+<div ngClass="All" *ngIf="departments">
+  <h1>The Departments : </h1>
+  <table>
+    <thead>
+      <th>
+        Name
+      </th>
+      <th>
+        Action
+      </th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let department of departments;let i=index" (click)="show(i)">
+        <td>{{department.name}}</td>
+        <button (click)="delete(i)">delete</button>
+        <button  (click)="update(i)">update</button>
+      </tr>
+    </tbody>
+  </table>
+
+  <span>* Click on a row in the table to see all the details *</span>
+  <br>
+  <img *ngIf="displayImg" ngClass="imgAlert" src="../../../assets/Images/Web/add.gif" alt="addData">
+  <br><br>
+  <button (mouseenter)="changeDisplay(true)" (mouseleave)="changeDisplay(false)" [routerLink]="['/ManagerJob/addDepartment']">New</button>
+</div>
+
+<div *ngIf="choose">
+  <app-show-department [departmant]="departmentChoose" (closedepartmant)="closeDepartmentMain()"></app-show-department>
+</div>
+
+<div ngClass="All" *ngIf="!departments">
+  <h1>No data to display ! </h1>
+  <img src="../../../assets/Images/Web/sorry.gif" ngClass="imgWebs" alt="sorry">
+</div>

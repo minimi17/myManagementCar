@@ -1,0 +1,39 @@
+<div ngClass="content">
+  <p>Add Worker : </p>
+  <form #AddWorkerForm = "ngForm" (ngSubmit)="add(AddWorkerForm);" >
+
+    <label>First Name : </label>
+    <input type="text" required name="firstname" #firstNameValid="ngModel" [(ngModel)]="worker.firstName" placeholder="Enter first name" maxlength="20" pattern="^[a-zA-zא-ת]*$">
+    <h1 class="Error" *ngIf="!firstNameValid.valid &&firstNameValid.touched">You need enter first name <br>( Up to 20 characters )</h1>
+    <br><br>
+    <label>Last Name : </label>
+    <input type="text" required name="namelast" #lastNameValid="ngModel" [(ngModel)]="worker.lastName" placeholder="Enter last name" maxlength="20" pattern="^[a-zA-zא-ת]*$">
+    <h1 class="Error" *ngIf="!lastNameValid.valid &&lastNameValid.touched">You need enter last name <br>( Up to 20 characters )</h1>
+    <br><br>
+    <label >Id : </label>
+    <input type="text" required name="id" #idValid="ngModel" [(ngModel)]="worker.id" maxlength="20" placeholder="Enter Worker id"  pattern="^[0-9]*$">
+    <h1 class="Error" *ngIf="!idValid.valid &&idValid.touched">You need enter worker id <br>( Up to 20 characters )</h1>
+    <br><br>
+    <label>role : </label>
+    <select name="roles" required #Rol="ngModel" [(ngModel)]="worker.role">
+      <option [ngValue]="" disabled>select role</option>
+      <option *ngFor="let role of roles" [ngValue]="role">{{role}}</option>
+    </select>
+    <h1 class="Error" *ngIf="!Rol.valid &&Rol.touched">You need choose role</h1>
+    <br><br>
+    <label>Salary</label>
+    <input type="number" required name="salary" #yearCar="ngModel" [(ngModel)]="worker.salary" min="10000" max="35000">
+    <h1 class="Error" *ngIf="!yearCar.valid &&yearCar.touched">You must enter a salary between 10,000 and 35,000</h1>
+    <br><br>
+    <label>Join In :  </label>
+    <input  required type="date" name="joinIn" #joinInValid="ngModel" [(ngModel)]="worker.joinIn" min="{{'2000-10-12'|date:'yyyy-MM-dd'}}"  max="{{date | date:'yyyy-MM-dd'}}">
+    <h1 class="Error" *ngIf="!joinInValid.valid &&joinInValid.touched">You must enter a join in date</h1>
+    <br><br>
+    <label>Password : </label>
+    <input type="password" required name="password" #passwordValid="ngModel" [(ngModel)]="worker.password" placeholder="Enter password" maxlength="20">
+    <h1 class="Error" *ngIf="!passwordValid.valid &&passwordValid.touched">You need enter password <br>( Up to 20 characters )</h1>
+    <br><br>
+    <button ngClass="submit" type="submit" [disabled]="!AddWorkerForm.valid">Add</button>
+
+  </form>
+</div>

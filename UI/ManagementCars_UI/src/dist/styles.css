@@ -1,0 +1,224 @@
+/* You can add global styles to this file, and also import other style files */
+.mainbody {
+  background-color: aqua;
+}
+
+body:hover {
+  cursor: url("./assets/Images/Cursors/move.gif"), auto;
+}
+
+button:hover {
+  cursor: url("./assets/Images/Cursors/click.gif"), auto;
+}
+
+p:hover {
+  cursor: url("./assets/Images/Cursors/move.gif"), auto;
+}
+
+input:hover {
+  cursor: url("./assets/Images/Cursors/click.gif"), auto;
+}
+
+.content {
+  background-image: linear-gradient(120deg, aqua, blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+  width: fit-content;
+  padding: 5vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vw;
+  text-align: center;
+}
+.content p {
+  width: fit-content;
+  padding: 1vw;
+  background-image: linear-gradient(80deg, #a98100, rgba(40, 234, 53, 0.976));
+  color: #6fff44;
+  font-size: 2vw;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+.content h2 {
+  color: transparent;
+  background-image: linear-gradient(80deg, #160cad, rgba(40, 234, 53, 0.976));
+  background-clip: text;
+  font-size: 2.5vw;
+}
+.content h3 {
+  color: #ffd025;
+  font-size: 2vw;
+}
+.content button {
+  width: 10vw;
+  height: 3vw;
+  font-size: 1.5vw;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.content label {
+  color: #f3f341;
+  font-size: 1.5vw;
+}
+.content label:hover {
+  cursor: url("./assets/Images/Cursors/in.gif"), auto;
+}
+.content input {
+  width: 10vw;
+  font-size: 1.5vw;
+}
+
+.Error {
+  color: red;
+  font-size: 1.5vw;
+  margin: 0;
+}
+
+.submit {
+  margin-top: 1vw;
+}
+
+.mainLogin {
+  background-image: linear-gradient(120deg, aqua, blue);
+  width: 10vw;
+  padding: 1vw;
+  margin-top: 2vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainLogin p {
+  width: fit-content;
+  color: #40ffff;
+  font-size: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainLogin div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.All {
+  background-image: linear-gradient(120deg, aqua, blue);
+  width: fit-content;
+  padding: 1vw;
+  margin-top: 2vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.All h1 {
+  width: fit-content;
+  color: #b32700;
+  font-size: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.All table {
+  margin-bottom: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.All table tr:hover {
+  background-image: linear-gradient(120deg, red, yellow);
+  cursor: url("./assets/Images/Cursors/in.gif"), auto;
+}
+
+.imgAlert {
+  width: 3vw;
+  height: 3vw;
+}
+
+.showAllData {
+  background-image: linear-gradient(120deg, #fe00fe, blue);
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  padding: 1vw;
+  margin-top: 2vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2vw;
+}
+.showAllData p {
+  color: #37fff8;
+}
+.showAllData p:hover {
+  cursor: url("./assets/Images/Cursors/in.gif"), auto;
+}
+.showAllData h2 {
+  color: #f9ad6f;
+}
+.showAllData div {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 15vw;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+button {
+  width: fit-content;
+  padding: 1vw;
+  font-size: 1.3vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imgWebs {
+  width: 20vw;
+  height: 10vw;
+}
+
+table {
+  margin-bottom: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+table tr:hover {
+  background-image: linear-gradient(120deg, red, yellow);
+  cursor: url("./assets/Images/Cursors/in.gif"), auto;
+}
+
+.home {
+  background-image: linear-gradient(120deg, aqua, blue);
+  width: 30vw;
+  padding: 1vw;
+  margin-top: 2vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home h1 {
+  width: fit-content;
+  color: #47ff47;
+  font-size: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home p {
+  width: fit-content;
+  color: #49ffff;
+  font-size: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+.home div {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+.home div div {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
